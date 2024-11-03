@@ -194,4 +194,22 @@ button:hover {
 
  }
 
+ @media screen and (max-width: 576px) {
+  
+
+ }
+
+
+ @media screen and (max-width: 350px) {
+  
+  /*====== FOR SMALL DEVICES =====*/
+  .container {
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+ }
+
+
+
+
 

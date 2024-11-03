@@ -1,15 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styles from './HeaderStyles.module.css';
 
 
 function Header() {
+
+  /*===== TOGGLE MENU ON MOBILE VIEW =====*/
+  const[Toggle, showMenu] = useState(false);
+
+
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} ${styles.container}`}
       >
         <a href="index.html" className={styles.nav__logo}>Jerald</a>
 
-        <div className={styles.nav__menu}>
+        <div className={`${styles.nav__menu} ${Toggle ? styles.show__menu : ""}`}>
           <ul className={`${styles.nav__list} ${styles.grid}`}>
 
             <li className={styles.nav__item}>
@@ -48,9 +53,9 @@ function Header() {
               </a>
             </li>
           </ul>
-          <i className={`uil uil-times ${styles.nav__close}`}></i>
+          <i className={`uil uil-times ${styles.nav__close}`} onClick={() => showMenu(!Toggle)}></i>
         </div>
-        <div className={styles.nav__toggle}>
+        <div className={styles.nav__toggle} onClick={() => showMenu(!Toggle)}>
           <i className="uil uil-apps"></i>
         </div>
       </nav>
